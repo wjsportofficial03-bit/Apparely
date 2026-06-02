@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan Adat Jawa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Garamond', serif;
+            background: linear-gradient(135deg, #8B4513 0%, #D2B48C 50%, #8B4513 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: linear-gradient(135deg, #FFF8DC 0%, #FAEBD7 50%, #FFE4B5 100%);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(139, 69, 19, 0.2);
+            border: 8px solid #8B4513;
+            border-radius: 15px;
+            max-width: 900px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(139, 69, 19, 0.05) 35px, rgba(139, 69, 19, 0.05) 70px);
+            pointer-events: none;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 60px 40px;
+        }
+
+        .header-ornament {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+            color: #8B4513;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .title h1 {
+            font-size: 42px;
+            color: #8B4513;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-style: italic;
+        }
+
+        .title p {
+            font-size: 16px;
+            color: #654321;
+            font-style: italic;
+            margin: 10px 0;
+        }
+
+        .divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #8B4513, transparent);
+            margin: 30px 0;
+        }
+
+        .opening {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 18px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .opening strong {
+            color: #8B4513;
+            font-size: 20px;
+        }
+
+        .names-section {
+            background: rgba(139, 69, 19, 0.08);
+            border-left: 6px solid #8B4513;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 8px rgba(139, 69, 19, 0.1);
+        }
+
+        .couple {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .couple-label {
+            font-size: 14px;
+            color: #654321;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .couple-name {
+            font-size: 36px;
+            color: #8B4513;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .couple-parents {
+            font-size: 13px;
+            color: #654321;
+            line-height: 1.6;
+        }
+
+        .connector {
+            text-align: center;
+            font-size: 24px;
+            color: #8B4513;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        .event-section {
+            background: rgba(255, 228, 181, 0.6);
+            border: 3px dashed #8B4513;
+            padding: 35px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.15);
+        }
+
+        .event-title {
+            font-size: 24px;
+            color: #8B4513;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+            text-decoration: underline;
+            text-decoration-color: #D2B48C;
+            text-underline-offset: 8px;
+        }
+
+        .event-details {
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .event-details strong {
+            color: #8B4513;
+            font-size: 18px;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: center;
+            margin: 12px 0;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #8B4513;
+            min-width: 120px;
+            text-align: right;
+        }
+
+        .detail-value {
+            color: #333;
+            text-align: left;
+        }
+
+        .location-box {
+            background: linear-gradient(135deg, #FFF8DC, #FFFACD);
+            border: 4px solid #8B4513;
+            padding: 25px;
+            margin-top: 15px;
+            border-radius: 8px;
+            box-shadow: inset 0 1px 3px rgba(139, 69, 19, 0.1);
+        }
+
+        .location-name {
+            font-size: 18px;
+            color: #8B4513;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .location-address {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .reception-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .reception-grid {
+                grid-template-columns: 1fr;
+            }
+            .content {
+                padding: 40px 25px;
+            }
+            .title h1 {
+                font-size: 32px;
+            }
+            .couple-name {
+                font-size: 28px;
+            }
+        }
+
+        .reception-item {
+            background: rgba(139, 69, 19, 0.05);
+            border-left: 5px solid #8B4513;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .reception-item strong {
+            color: #8B4513;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+
+        .reception-item span {
+            color: #333;
+            font-size: 14px;
+            display: block;
+            line-height: 1.6;
+        }
+
+        .special-request {
+            background: linear-gradient(135deg, #FFE4B5, #FFDEAD);
+            border: 3px solid #8B4513;
+            padding: 30px;
+            margin: 35px 0;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.2);
+        }
+
+        .special-request h3 {
+            font-size: 18px;
+            color: #8B4513;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .special-request p {
+            font-size: 15px;
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 10px;
+        }
+
+        .covid-protocol {
+            background: rgba(210, 180, 140, 0.4);
+            border-left: 6px solid #8B4513;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        .covid-protocol strong {
+            color: #8B4513;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 3px solid #8B4513;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            color: #654321;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .footer-ornament {
+            font-size: 24px;
+            color: #8B4513;
+            margin: 20px 0;
+        }
+
+        .blessing {
+            font-size: 16px;
+            color: #8B4513;
+            font-style: italic;
+            margin: 20px 0;
+            line-height: 1.8;
+        }
+
+        .closing-name {
+            font-size: 16px;
+            color: #333;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .ornament-top-left,
+        .ornament-top-right,
+        .ornament-bottom-left,
+        .ornament-bottom-right {
+            position: absolute;
+            font-size: 28px;
+            color: rgba(139, 69, 19, 0.2);
+            z-index: 0;
+        }
+
+        .ornament-top-left {
+            top: 10px;
+            left: 10px;
+        }
+
+        .ornament-top-right {
+            top: 10px;
+            right: 10px;
+        }
+
+        .ornament-bottom-left {
+            bottom: 10px;
+            left: 10px;
+        }
+
+        .ornament-bottom-right {
+            bottom: 10px;
+            right: 10px;
+        }
+
+        .flower-decoration {
+            text-align: center;
+            font-size: 20px;
+            color: #8B4513;
+            margin: 20px 0;
+        }
+
+        .rsvp-section {
+            background: linear-gradient(135deg, #FAEBD7, #FFE4B5);
+            border: 4px double #8B4513;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.15);
+        }
+
+        .rsvp-section h3 {
+            font-size: 20px;
+            color: #8B4513;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .rsvp-details {
+            font-size: 15px;
+            color: #333;
+            line-height: 1.8;
+            margin: 10px 0;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #FFE4B5, transparent);
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ornament-top-left">✦</div>
+        <div class="ornament-top-right">✦</div>
+        <div class="ornament-bottom-left">✦</div>
+        <div class="ornament-bottom-right">✦</div>
+
+        <div class="content">
+            <div class="header-ornament">❀ ✦ ❀</div>
+
+            <div class="title">
+                <p>Dengan Nama Allah yang Maha Pengasih Lagi Maha Penyayang</p>
+                <h1>UNDANGAN PERNIKAHAN</h1>
+                <p>Upacara Adat Jawa yang Mulia dan Berkah</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="opening">
+                <p>Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+                <strong>Segenap Keluarga Besar dengan Hormat dan Sebaik-baiknya Kami Undang Saudara/I</strong>
+                <p>untuk menghadiri Acara Pernikahan Putra/Putri Kami yang akan dilaksanakan dengan Adat Istiadat Jawa yang Otentik, Berkah, dan Meriah</p>
+            </div>
+
+            <div class="flower-decoration">🌸 ❀ 🌹</div>
+
+            <div class="names-section">
+                <div class="couple">
+                    <div class="couple-label">Putra Kami Yang Berbahagia</div>
+                    <div class="couple-name">AHMAD NURDYANTO WIJAYA, S.E.</div>
+                    <div class="couple-parents">
+                        Putra dari<br>
+                        <strong>Bapak Ir. H. Sugiyanto Wijaya, M.Sc.</strong> & <strong>Ibu Hj. Siti Nurjannah</strong><br>
+                        Dari Yogyakarta, Daerah Istimewa Yogyakarta
+                    </div>
+                </div>
+
+                <div class="connector">♥ dengan ♥</div>
+
+                <div class="couple">
+                    <div class="couple-label">Putri Kami Yang Dimuliakan</div>
+                    <div class="couple-name">RATIH KUSUMA WARDANI, S.H.</div>
+                    <div class="couple-parents">
+                        Putri dari<br>
+                        <strong>Bapak Drs. H. Mahmud Suwoto</strong> & <strong>Ibu Hj. Dwi Astuti Rahmawati</strong><br>
+                        Dari Surakarta, Jawa Tengah
+                    </div>
+                </div>
+            </div>
+
+            <div class="flower-decoration">🌸 ❀ 🌹</div>
+
+            <!-- AKAD NIKAH SECTION -->
+            <div class="event-section">
+                <div class="event-title">UPACARA AKAD NIKAH</div>
+                <div class="event-details">
+                    <div class="detail-row">
+                        <span class="detail-label">📅 HARI, TANGGAL</span>
+                        <span class="detail-value">Jumat, 14 Agustus 2026</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">⏰ WAKTU</span>
+                        <span class="detail-value">Pukul 08.00 - 10.30 WIB</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">📍 TEMPAT</span>
+                        <span class="detail-value">Rumah Pengantin Perempuan</span>
+                    </div>
+                </div>
+
+                <div class="location-box">
+                    <div class="location-name">Pendopo Besar Yogyakarta</div>
+                    <div class="location-address">
+                        Jalan Malioboro No. 45<br>
+                        Kelurahan Brintik, Kecamatan Kraton<br>
+                        Kota Yogyakarta, DI Yogyakarta 55233<br>
+                        <strong>Telepon: (0274) 555-0145</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESEPSI SECTION -->
+            <div class="event-section">
+                <div class="event-title">RESEPSI PERNIKAHAN & PERAYAAN ADAT JAWA</div>
+                
+                <div class="reception-grid">
+                    <div class="reception-item">
+                        <strong>🌅 RESEPSI PAGI</strong>
+                        <span>Hari: Jumat, 14 Agustus 2026</span>
+                        <span>Waktu: 11.00 - 15.00 WIB</span>
+                        <span>Acara: Jamuan Makan Siang, Tari-tarian Tradisional Jawa, dan Upacara Persembahan</span>
+                    </div>
+                    <div class="reception-item">
+                        <strong>🌙 RESEPSI MALAM</strong>
+                        <span>Hari: Jumat, 14 Agustus 2026</span>
+                        <span>Waktu: 18.00 - 23.30 WIB</span>
+                        <span>Acara: Jamuan Makan Malam, Musik Gambus, Tarian Modern, dan Pertunjukan Wayang Kulit</span>
+                    </div>
+                </div>
+
+                <div class="location-box">
+                    <div class="location-name">💫 GEDUNG KESENIAN YOGYAKARTA INDAH</div>
+                    <div class="location-address">
+                        Jalan Ahmad Yani No. 123<br>
+                        Kompleks Taman Budaya Yogyakarta<br>
+                        Kelurahan Ngadiwinatan, Kecamatan Mantrijeron<br>
+                        Kota Yogyakarta, DI Yogyakarta 55231<br>
+                        <strong>Telepon: (0274) 555-0200 | WhatsApp: +62 812-3456-7890</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CEREMONIAL EVENTS -->
+            <div class="event-section">
+                <div class="event-title">RANGKAIAN ACARA ADAT JAWA YANG ISTIMEWA</div>
+                <div class="event-details">
+                    <p><strong>Hari Kamis, 13 Agustus 2026 (H-1):</strong></p>
+                    <p>Upacara Midodareni (Pertapaan Pengantin) - Pukul 19.00 WIB di Rumah Pengantin Perempuan. Diiringi dengan Tembang Jawa Tradisional, Bedug, dan Doa Berkah untuk Pengantin.</p>
+                    
+                    <div style="margin: 20px 0; border-top: 2px solid #8B4513; border-bottom: 2px solid #8B4513; padding: 15px 0;">
+                        <p><strong>Hari Jumat, 14 Agustus 2026:</strong></p>
+                        <p>🕌 <strong>Pukul 08.00-10.30 WIB:</strong> Akad Nikah dengan Ijab Kabul Islami Jawa<br>
+                        🎭 <strong>Pukul 11.00-15.00 WIB:</strong> Resepsi Pagi dengan Siraman (Mandi Berkah Pengantin), Payas Pengantin (Perias Pengantin), Upacara Sungkeman (Penghormatan kepada Orang Tua)<br>
+                        🌾 <strong>Pukul 15.00-17.00 WIB:</strong> Istirahat dan Persiapan Resepsi Malam<br>
+                        🌃 <strong>Pukul 18.00-23.30 WIB:</strong> Resepsi Malam dengan Pertunjukan Wayang Kulit, Tari Rakyat Jawa, dan Hiburan Musik Tradisional</p>
+                    </div>
+
+                    <p><strong>Sabtu, 15 Agustus 2026 (H+1):</strong></p>
+                    <p>Upacara Srah-srahan (Turun Temurun) dan Temu Keluarga Besar di Rumah Pengantin Laki-laki. Diiringi dengan Hidangan Istimewa dan Doa Syukuran untuk Kebahagiaan Pasangan Muda.</p>
+                </div>
+            </div>
+
+            <div class="flower-decoration">🌸 ❀ 🌹</div>
+
+            <!-- SPECIAL REQUESTS -->
+            <div class="special-request">
+                <h3>🙏 PERMINTAAN KHUSUS YANG MULIA 🙏</h3>
+                <p><strong>Kepada Saudara/I yang Terhormat,</strong></p>
+                <p>Demi menjaga kemeriahan dan keindahan Upacara Adat Jawa kami yang istimewa, dengan segala hormat kami mohon:</p>
+                <p>
+                    ✦ Pakaian resmi/formal atau mengenakan pakaian tradisional Jawa (Batik, Kebaya, atau Pakaian Adat) yang bernuansa<br>
+                    ✦ Tidak membawa hadiah dalam bentuk barang logam yang berat atau peralatan elektronik<br>
+                    ✦ Menghormati dan mengikuti setiap rangkaian acara yang telah direncanakan<br>
+                    ✦ Menjaga ketertiban dan kesopanan selama acara berlangsung<br>
+                    ✦ Menggunakan bahasa yang halus dan tata krama Jawa dalam berkomunikasi dengan Keluarga Besar Pengantin
+                </p>
+            </div>
+
+            <!-- RSVP SECTION -->
+            <div class="rsvp-section">
+                <h3>📮 KONFIRMASI KEHADIRAN (RSVP) 📮</h3>
+                <div class="rsvp-details">
+                    <p>Kami dengan tulus mengharapkan konfirmasi kehadiran Saudara/I selambat-lambatnya tanggal <span class="highlight"><strong>7 Agustus 2026</strong></span></p>
+                    <p><strong>Hubungi:</strong><br>
+                    📱 <strong>Panitia Penyelenggara:</strong> +62 812-3456-7890 (Ario Wijaya)<br>
+                    📧 <strong>Email:</strong> pernikahan.ahmad.ratih@gmail.com<br>
+                    💬 <strong>WhatsApp:</strong> @AhmadRatihWedding2026</p>
+                </div>
+            </div>
+
+            <!-- COVID PROTOCOL -->
+            <div class="covid-protocol">
+                <strong>⚠️ PROTOKOL KESEHATAN DAN KEAMANAN</strong>
+                <p>Dalam rangka menjaga kesehatan dan keselamatan semua undangan, kami dengan hormat memohon:</p>
+                <p>✓ Tamu yang telah divaksin 3x (Booster) atau terbukti negatif rapid/PCR dalam 3 hari sebelum acara dapat hadir tanpa pembatasan<br>
+                ✓ Menyiapkan masker cadangan untuk acara indoor<br>
+                ✓ Mengikuti protokol kebersihan yang berlaku di tempat acara (hand sanitizer, thermal check)<br>
+                ✓ Menjaga jarak minimal 1 meter dalam area berkumpul<br>
+                ✓ Bagi yang merasa tidak sehat, kami hormati untuk tidak hadir demi kesehatan bersama</p>
+            </div>
+
+            <!-- ACCOMMODATION & TRAVEL INFO -->
+            <div class="event-section">
+                <div class="event-title">ℹ️ INFORMASI AKOMODASI & TRANSPORTASI</div>
+                <div class="event-details">
+                    <p><strong>Untuk Tamu yang Datang dari Luar Kota:</strong></p>
+                    
+                    <div style="margin: 20px 0; text-align: left; background: rgba(139, 69, 19, 0.05); padding: 15px; border-radius: 5px;">
+                        <p><strong>🏨 REKOMENDASI HOTEL BERBINTANG:</strong></p>
+                        <p>• Hotel Bintang Lima Yogyakarta - Jl. Malioboro (Jarak: 2 km dari Lokasi Acara)<br>
+                        • Hyatt Regency Yogyakarta - Jl. Kusumanegara (Jarak: 5 km)<br>
+                        • Sheraton Yogyakarta - Kompleks Taman Budaya (Jarak: 1 km)<br>
+                        • The Alila Yogyakarta - Jl. Jend. Ahmad Yani (Jarak: 2 km)<br>
+                        <br>
+                        <strong>Hubungi Panitia untuk Paket Akomodasi Khusus dengan Harga Spesial</strong></p>
+                    </div>
+
+                    <p style="margin-top: 15px;"><strong>🚕 TRANSPORTASI:</strong></p>
+                    <p>Kami menyediakan layanan antar-jemput gratis dari Bandara YIA dan Stasiun Tugu untuk tamu undangan. Silakan konfirmasi kedatangan Anda terlebih dahulu kepada panitia.</p>
+                </div>
+            </div>
+
+            <!-- FINAL BLESSING -->
+            <div class="footer">
+                <div class="flower-decoration">❀ ✦ ❀</div>
+
+                <div class="blessing">
+                    <p>"Bahwa dalam Kehidupan Pernikahan ini, terdapat berkah dari Allah SWT, kedua mempelai akan menjalani kehidupan baru dengan cinta kasih yang mendalam, saling menghormati, dan membangun rumah tangga yang bahagia sesuai dengan nilai-nilai luhur Budaya Jawa dan Agama Islam yang kita anut."</p>
+                </div>
+
+                <div class="footer-text">
+                    <p>Dengan penuh harapan dan doa, kami mengundang Saudara/I untuk merayakan momen sakral ini bersama kami.</p>
+                    <p>Kehadiran dan doa restu dari Saudara/I adalah kebahagiaan dan kehormatan terbesar bagi kami.</p>
+                    <p><strong>Terima kasih atas perhatian dan dukungan yang luar biasa.</strong></p>
+                </div>
+
+                <div class="footer-ornament">✦ ❀ ✦</div>
+
+                <div class="closing-name">
+                    <p>Hormat dan Kasih Sayang,</p>
+                    <p style="margin-top: 30px;">Keluarga Besar Wijaya & Suwoto</p>
+                    <p style="font-size: 14px; font-style: italic; margin-top: 20px;">Ahmad Nurdyanto Wijaya & Ratih Kusuma Wardani</p>
+                </div>
+
+                <div class="footer-ornament">✦ ❀ ✦</div>
+
+                <p style="font-size: 12px; color: #999; margin-top: 30px;">
+                    Undangan ini dibuat dengan sepenuh hati untuk menghormati Anda dan merayakan momen terindah dalam hidup kami. 
+                    Terima kasih telah menjadi bagian dari perjalanan hidup kami.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
