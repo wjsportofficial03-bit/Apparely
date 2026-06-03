@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaroengKoe - Online</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🛒 WaroengKoe</h1>
+            </div>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Cari produk...">
+                <button onclick="searchProduct()">🔍</button>
+            </div>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="container">
+            <div class="banner-content">
+                <h2>🔥 Promo Spesial Hari Ini!</h2>
+                <p>Diskon hingga 50% untuk semua produk</p>
+                <button class="btn-primary">Belanja Sekarang</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kategori -->
+    <section class="categories">
+        <div class="container">
+            <div class="category-list">
+                <button class="category-btn active" onclick="filterCategory('semua')">Semua</button>
+                <button class="category-btn" onclick="filterCategory('elektronik')">Elektronik</button>
+                <button class="category-btn" onclick="filterCategory('fashion')">Fashion</button>
+                <button class="category-btn" onclick="filterCategory('makanan')">Makanan</button>
+                <button class="category-btn" onclick="filterCategory('aksesoris')">Aksesoris</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produk -->
+    <section class="products">
+        <div class="container">
+            <h2 class="section-title">Produk Terlaris ⭐</h2>
+            <div class="product-grid" id="productGrid">
+                <!-- Produk akan di-generate oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Keranjang Belanja</h3>
+            <button class="close-btn" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Item cart akan di-generate di sini -->
+        </div>
+        <div class="cart-footer">
+            <div class="total-price">
+                <span>Total:</span>
+                <span id="totalPrice">Rp 0</span>
+            </div>
+            <button class="btn-checkout" onclick="checkout()">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>ShopSimple</h4>
+                    <p>Toko online terpercaya dengan harga terbaik.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li>Bantuan</li>
+                        <li>Cara Belanja</li>
+                        <li>Pengiriman</li>
+                        <li>Return</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Hubungi Kami</h4>
+                    <p>📧 support@shopsimple.com</p>
+                    <p>📱 0895-3282-99913</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WaroengKoe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notifikasi -->
+    <div class="notification" id="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
